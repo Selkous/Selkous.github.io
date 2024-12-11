@@ -7,8 +7,8 @@
     <link rel="icon" href="/assets/favicon.svg">
   
   
-  <title>搜索 | Selkous的博客</title>
-  <link rel="canonical" href="http://example.com/search/index.html">
+  <title>分类: 测试 | Selkous的博客</title>
+  <link rel="canonical" href="http://example.com/categories/%E6%B5%8B%E8%AF%95/index.html">
   <meta name="author" content="Selkous" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -21,8 +21,8 @@
   
   <meta name="description" content="Selkous的个人博客(在建)">
 <meta property="og:type" content="website">
-<meta property="og:title" content="搜索">
-<meta property="og:url" content="http://example.com/search/index.html">
+<meta property="og:title" content="分类: 测试">
+<meta property="og:url" content="http://example.com/categories/%E6%B5%8B%E8%AF%95/index.html">
 <meta property="og:site_name" content="Selkous的博客">
 <meta property="og:description" content="Selkous的个人博客(在建)">
 <meta property="og:locale" content="zh_CN">
@@ -161,136 +161,104 @@
 
         
 
-            <style>
-  #kr-search-notice.alert {
-    transition: 0.3s;
-  }
+            <!-- Breadcrumb for tag & category page -->
 
-  #kr-search-results {
-    margin-top: 20px;
-  }
+    <article class="kratos-hentry kratos-entry-border clearfix">
+    <div class="kratos-breadcrumb">
+        <a href="/">
+            <i class="fa fa-home"></i>
+        </a>
+        <i class="fa fa-angle-right"></i>
+        
 
-  .kr-search-result {
-    margin: 20px;
-  }
+            <a href="/categories/">
+                分类
+            </a>
 
-  .kratos-entry-content m {
-    color: #333;
-    background-color: yellow;
-  }
-
-  #search-input {
-    appearance: none;
-    -webkit-appearance: none;
-    border-color: #dbdbdb;
-    border-radius: 4px 0 0 4px;
-
-    &:hover {
-      border-color: #b5b5b5;
-    }
-
-    &:focus {
-      outline: 0;
-    }
-  }
-
-  .input-group .form-input.input-lg {
-    display: inline-flex;
-    box-shadow: none;
-    flex: auto;
-    justify-content: flex-start;
-    padding: 0 8px;
-    font-size: 15px;
-    max-width: 100%;
-    border: 1px solid transparent;
-  }
-
-  .btn.btn-primary {
-    border: transparent;
-    border-radius: 0 4px 4px 0;
-  }
-
-  .search-demo-tags a {
-    margin: 5px 10px;
-  }
-
-  #search-input {
-    color: var(--kr-theme-text);
-    background-color: var(--kr-theme-card-bg);
-
-    &:active,
-    &:focus {
-      border-color: var(--kr-theme-link-hover);
-      box-shadow: 0 0 0 0.125em rga(var(--kr-theme-link-hover), 0.25);
-    }
-  }
-</style>
-
-<div class="kratos-hentry kratos-page-inner clearfix">
-    <header class="kratos-page-header">
-        <h1 class="kratos-page-title text-center" itemprop="name headline">搜索</h1>
-    </header>
-    <div class="kratos-page-content kr-search-input">
-        <form class="input-group" onsubmit="return inpSearch();">
-            <input class="form-input input-lg" id="search-input" maxlength="80" name="s" placeholder="有什么想找找看的呢o(*￣▽￣*)ブ" required type="search">
-            <button class="btn btn-primary" type="submit">找一找~</button>
-        </form>
-    </div>
-</div>
-
-<div class="alert alert-info" id="kr-search-notice">
-    这里是 Selkous的博客 的搜索引擎~
-</div>
-
-<div id="kr-search-results">
-    <div class="kratos-hentry kratos-page-inner clearfix">
-        <div class="kratos-page-content kr-search-result">
-            <p>搜索多个关键词时请用空格分割，例如「测试标签」这样；</p>
-            <p>您也可以使用这些标签碰碰运气哦~</p>
-            <p class="search-demo-tags">
-                <a href="/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/" style="font-size: 18px; color: #b2b7be">测试标签</a>
-            </p>
-        </div>
-    </div>
-</div>
-
-<template id="kr-search-result-template">
-  <article class="kratos-hentry clearfix">
-    <div class="kratos-entry-border clearfix">
-        <div class="kratos-entry-post-inner kr-search-result">
-            <header class="kratos-entry-header">
-                $CATEGORY
-                <h2 class="kratos-entry-title"><a href="$LINK">$TITLE</a></h2>
-            </header>
-            <div class="kratos-entry-content">
-                <p>...$CONTENT...</p>
-            </div>
-        </div>
-        <div class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <a><i class="fa fa-calendar"></i></a><a>$DATE</a>
-                $TAGS
-            </span>
-        </div>
+            
+            
+                <i class="fa fa-angle-right"></i>
+                <a href="/categories/%E6%B5%8B%E8%AF%95/">
+                    测试
+                </a>
+            
+        
+        
     </div>
 </article>
-</template>
-
-<template id="kr-search-tag-begin-template">
-  <a><i class="fa fa-tags"></i></a>
-</template>
-
-<template id="kr-search-tag-template">
-  <a class="tag-link" href="$LINK" rel="tag">$TAG</a>
-</template>
-
-<template id="kr-search-category-template">
-  <a class="label-link" href="$LINK">$CATEGORY</a>
-</template>
 
 
-  <script>window.searchDataFile = "/search-index.json";</script>
-  <script defer src="/js/kr-search.min.js"></script>
+
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2024/12/08/hello-world/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+                    <h2 class="kratos-entry-title"><a href="/2024/12/08/hello-world/" itemprop="mainEntityOfPage"><span itemprop="name headline">博客测试</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            二级标题三级标题四级标题五级标题六级标题这是一段普通文字：
+予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯；朝晖夕阴，气象万千。此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，览物之情，得...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2024-12-07T16:37:09.731Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2024-12-08</a>
+                </time>
+                <a>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/" rel="tag">测试标签</a>
+                    
+                </a>
+                
+                    <a>
+                        <i class="fa fa-eye"></i>
+                        <span data-path="/2024/12/08/hello-world/" class="waline-pageview-count"> </span> 次阅读
+                    </a>
+                
+                
+                    <a>
+                        <i class="fa fa-commenting-o"></i>
+                        <span data-path="/2024/12/08/hello-world/" class="waline-comment-count"> </span> 条评论
+                    </a>
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2024/12/08/hello-world/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+
+
+
+
+
+    <div class="comment-index">
+        
+    </div>
 
 
 
